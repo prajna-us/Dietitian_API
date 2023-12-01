@@ -16,6 +16,30 @@ Feature: Dietician Feature
   Background:
     Given User sets Authoization to Bearer Token
 
+
+  @01PostDieticianLoginWithValidCredentials
+  Scenario: Dietician login with valid credentials
+   Given Dietician creates POST Request 
+    When Dietician sends HTTPS POST Request with login endpoint and request Body
+    Then Dietician receives 200 Status Code
+    
+   @02PostCreateNewPatientWithValidBody
+  Scenario: Dietician creates new patient with valid body
+    Given Dietician creates  POST Request
+    When Dietician sends HTTPS POST Request and with valid request body and authentication token
+    Then Dietician receives 201 Status Code
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
   @01PostRequestWithValidCredentials
   Scenario Outline: Check if user able to create a patient detail with valid endpoint and request body
     Given User creates POST Request for the PatientAPI endpoint
